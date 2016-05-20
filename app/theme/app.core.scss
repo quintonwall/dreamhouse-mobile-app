@@ -14,6 +14,10 @@
   src: url("../fonts/roboto-light.ttf");
 }
 
+.toast-message {
+  background-color: map-get($colors, primary);
+}
+
 @import "../pages/property-details/property-details";
 
 @import "../pages/broker-details/broker-details";

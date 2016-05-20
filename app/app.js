@@ -1,4 +1,4 @@
-import {App, IonicApp, Platform} from 'ionic-angular';
+import {App, IonicApp, Platform, Alert, NavController} from 'ionic-angular';
 import {WelcomePage} from './pages/welcome/welcome';
 import {PropertyListPage} from './pages/property-list/property-list';
 import {BrokerListPage} from './pages/broker-list/broker-list';
@@ -41,6 +41,7 @@ class MyApp {
     initializeApp() {
 
         this.platform.ready().then(() => {
+
             force.init({
                 appId: "3MVG9sG9Z3Q1Rlbc4tkIx2fI3ZYblYiG9oMxlbHO3gixLK8CcH.342BxX6L7NT8W4iND3lT9h52sAq1KtTIiz",
                 proxyURL: "https://dev-cors-proxy.herokuapp.com/"
@@ -52,6 +53,7 @@ class MyApp {
             if (window.PushNotification) {
                 let push = window.PushNotification.init({
                     "ios": {
+                        "alert": true,
                         "sound": true,
                         "vibration": true,
                         "badge": true
@@ -63,13 +65,25 @@ class MyApp {
                     console.log("registration event: " + data.registrationId);
                 });
 
+                push.on('notification', data => {
+                    if (data.additionalData.foreground) {
+                        let nav = this.app.getComponent('nav');
+                        let alert = Alert.create({
+                            title: "Price Change",
+                            subTitle: data.message,
+                            buttons: ['OK']
+                        });
+                        nav.present(alert);
+                    }
+                });
+
                 push.on('error', e => {
                     console.log("push error = " + e.message);
                 });
             }
-
         });
     }
+
 
     openPage(page) {
         let nav = this.app.getComponent('nav');

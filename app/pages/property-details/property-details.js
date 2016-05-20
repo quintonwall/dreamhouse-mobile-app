@@ -1,5 +1,5 @@
 import {OnInit} from 'angular2/core';
-import {Page, NavController, NavParams, Alert, ActionSheet} from 'ionic-angular';
+import {Page, NavController, NavParams, Toast, ActionSheet} from 'ionic-angular';
 import {BrokerDetailsPage} from '../broker-details/broker-details';
 import {PropertyService} from '../../services/property-service';
 
@@ -25,14 +25,26 @@ export class PropertyDetailsPage {
 
     favorite(event, property) {
 
-        this.propertyService.favorite(property).then(() => {
-            let alert = Alert.create({
-                title: 'Favorites',
-                subTitle: 'Property added to your favorites',
-                buttons: ['OK']
+        this.propertyService.favorite(property)
+            .then(() => {
+                let toast = Toast.create({
+                    message: 'Property added to your favorites',
+                    cssClass: 'mytoast',
+                    duration: 1000
+                });
+                this.nav.present(toast);
+            })
+            .catch(error => {
+                console.log(error);
+                if (error[0].message==="duplicate") {
+                    let toast = Toast.create({
+                        message: 'Property already in your favorites',
+                        cssClass: 'mytoast',
+                        duration: 1000
+                    });
+                    this.nav.present(toast);
+                }
             });
-            this.nav.present(alert);
-        });
 
     }
 
