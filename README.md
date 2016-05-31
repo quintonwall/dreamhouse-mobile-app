@@ -1,8 +1,16 @@
 ## DreamHouse Mobile App
 
-1. Install Cordova and the latest beta version of the Ionic CLI:
+### Install the Application
+
+1. Install the latest version of Cordova and Ionic 2 beta:
     ```
     npm install -g cordova ionic@beta
+    ```
+
+    or
+
+    ```
+    sudo npm install -g cordova ionic@beta
     ```
 
 1. Clone this repository
@@ -20,14 +28,41 @@
     npm install
     ```
     
-1. Remove the default version of Cordova iOS
+### Build and Run in your Browser    
+
+1. Install gulp
     ```
-    cordova platform remove ios
+    npm install -g gulp
     ```
+
+    or 
     
-1. Install the version of Cordova iOS required by the Mobile SDK
     ```
-    cordova platform add ios@3.9.2
+    sudo npm install -g gulp
+    ```
+
+1. Install force-server
+    ```
+    npm install -g force-server
+    ```
+
+    or
+
+    ```
+    sudo npm install -g force-server
+    ```
+
+1. Run the app in the browser
+    ```
+    force-server --root www
+    ```
+        
+### Build and Run on Device    
+
+1. Restore the state of the application using the `cordovaPlugins` and `cordovaPlatforms` entries in package.json:
+    
+    ```
+    ionic state restore
     ```
 
 1. Install the Mobile SDK plugin
