@@ -86,3 +86,5 @@ Follow [these instructions](http://dreamhouse-site.herokuapp.com/installation/) 
 1. Open ```DreamHouse.xcodeproj``` in the ```dreamhouse-mobile-app/platforms/ios``` directory  
 
 1. In Xcode, run the application, or select **Product** > **Archive** in the menu for App Store or Enterprise deployment
+
+    > If the build fails in Xcode, select the DreamHouse target, click the Build Settings tab, search for bitcode, select No for Enable Bitcode, and try again.
