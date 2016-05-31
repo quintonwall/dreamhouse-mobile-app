@@ -1,6 +1,6 @@
 # DreamHouse Mobile App
 
-This repository hosts the source code and installation instructions for the DreamHouse mobile app. DreamHouse is an end-to-end sample application that demonstrates how to build apps on the Salesforce platform. Visit the DreamHouse application [microsite](http://dreamhouse-site.herokuapp.com/) for more information.
+This repository hosts the source code and installation instructions for the DreamHouse mobile app. DreamHouse is an end-to-end sample application that demonstrates how to build apps on the Salesforce platform. Visit the [DreamHouse Microsite](http://dreamhouse-site.herokuapp.com/) for more information.
 
 
 ## Install the Salesesforce Back-end
