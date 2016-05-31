@@ -1,4 +1,7 @@
-import {App, IonicApp, Platform, Alert, NavController} from 'ionic-angular';
+import {ViewChild} from '@angular/core';
+import {App, Platform, Alert} from 'ionic-angular';
+import {StatusBar} from 'ionic-native';
+
 import {WelcomePage} from './pages/welcome/welcome';
 import {PropertyListPage} from './pages/property-list/property-list';
 import {BrokerListPage} from './pages/broker-list/broker-list';
@@ -13,19 +16,22 @@ import * as force from './force';
     config: {
         mode: "ios"
     },
+    queries: {
+        nav: new ViewChild('content')
+    },
     providers: [PropertyService, BrokerService, PushService]
 })
 class MyApp {
-
     static get parameters() {
-        return [[IonicApp], [Platform], [PushService]];
+        return [[Platform], [PushService]];
     }
 
-    constructor(app, platform, pushService) {
+    constructor(platform, pushService) {
 
-        this.app = app;
         this.platform = platform;
         this.pushService = pushService;
+
+        this.initializeApp();
 
         this.pages = [
             {title: 'Welcome', component: WelcomePage, icon: "bookmark"},
@@ -35,7 +41,6 @@ class MyApp {
         ];
 
         this.rootPage = WelcomePage;
-        this.initializeApp();
     }
 
     initializeApp() {
@@ -67,13 +72,12 @@ class MyApp {
 
                 push.on('notification', data => {
                     if (data.additionalData.foreground) {
-                        let nav = this.app.getComponent('nav');
                         let alert = Alert.create({
                             title: "Price Change",
                             subTitle: data.message,
                             buttons: ['OK']
                         });
-                        nav.present(alert);
+                        this.nav.present(alert);
                     }
                 });
 
@@ -81,13 +85,13 @@ class MyApp {
                     console.log("push error = " + e.message);
                 });
             }
+
         });
+
     }
 
-
     openPage(page) {
-        let nav = this.app.getComponent('nav');
-        nav.setRoot(page.component);
+        this.nav.setRoot(page.component);
     }
 
     logoutUser() {
