@@ -41,6 +41,12 @@
     sudo npm install -g gulp
     ```
 
+1. Build the JavaScript app using the Ionic build script
+
+    ```
+    gulp build
+    ```
+
 1. Install force-server
     ```
     npm install -g force-server
