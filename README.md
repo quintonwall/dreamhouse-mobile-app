@@ -1,12 +1,13 @@
-## DreamHouse Mobile App
+# DreamHouse Mobile App
 
-Visit the DreamHouse application [microsite](http://dreamhouse-site.herokuapp.com/) for more information.
+This repository hosts the source code and installation instructions for the DreamHouse mobile app. DreamHouse is an end-to-end sample application that demonstrates how to build apps on the Salesforce platform. Visit the DreamHouse application [microsite](http://dreamhouse-site.herokuapp.com/) for more information.
 
-### Install the Salesesforce Back-end
+
+## Install the Salesesforce Back-end
 
 Follow [these instructions](http://dreamhouse-site.herokuapp.com/installation/) to install the Salesforce back-end.
 
-### Install the Application
+## Install the Application
 
 1. Install the latest version of Cordova and Ionic 2 beta:
     ```
@@ -34,7 +35,7 @@ Follow [these instructions](http://dreamhouse-site.herokuapp.com/installation/) 
     npm install
     ```
     
-### Build and Run in your Browser    
+## Build and Run in your Browser    
 
 1. Install gulp
     ```
@@ -69,7 +70,7 @@ Follow [these instructions](http://dreamhouse-site.herokuapp.com/installation/) 
     force-server --root www
     ```
         
-### Build and Run on Device    
+## Build and Run on Device
 
 1. Restore the state of the application using the `cordovaPlugins` and `cordovaPlatforms` entries in package.json:
     
