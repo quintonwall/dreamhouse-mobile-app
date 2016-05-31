@@ -65,6 +65,10 @@ Follow [these instructions](http://dreamhouse-site.herokuapp.com/installation/) 
     ```
     force-server --root www
     ```
+    
+    - If you don't see the OAuth window, enable popups and try again.
+    - Make sure you log in the org you installed the DreamHouse package in.
+        
         
 ## Build and Run on Device
 
