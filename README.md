@@ -36,7 +36,7 @@ Follow [these instructions](http://dreamhouse-site.herokuapp.com/installation/) 
     
 ## Build and Run in your Browser    
 
-1. Install gulp:
+1. Install gulp if you don't already have it on your system:
     ```
     npm install -g gulp
     ```
@@ -44,11 +44,6 @@ Follow [these instructions](http://dreamhouse-site.herokuapp.com/installation/) 
     or (Mac):
     ```
     sudo npm install -g gulp
-    ```
-
-1. Build the JavaScript app using the Ionic build script:
-    ```
-    gulp build
     ```
 
 1. Install force-server:
@@ -59,6 +54,11 @@ Follow [these instructions](http://dreamhouse-site.herokuapp.com/installation/) 
     or (Mac):
     ```
     sudo npm install -g force-server
+    ```
+
+1. Build the JavaScript app using the Ionic build script:
+    ```
+    gulp build
     ```
 
 1. Run the app in the browser:
