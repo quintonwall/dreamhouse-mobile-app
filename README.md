@@ -1,6 +1,6 @@
-## DreamHouse Mobile App
+# DreamHouse Mobile App
 
-### Install the Application
+## Install the Application
 
 1. Install the latest version of Cordova and Ionic 2 beta:
     ```
@@ -28,7 +28,7 @@
     npm install
     ```
     
-### Build and Run in your Browser    
+## Build and Run in your Browser    
 
 1. Install gulp
     ```
@@ -63,7 +63,7 @@
     force-server --root www
     ```
         
-### Build and Run on Device    
+## Build and Run on Device    
 
 1. Restore the state of the application using the `cordovaPlugins` and `cordovaPlatforms` entries in package.json:
     
