@@ -12,11 +12,11 @@ let // The login URL for the OAuth process
 // The Connected App client Id. Default app id provided - Not for production use.
 // This application supports http://localhost:8200/oauthcallback.html as a valid callback URL
 // To override default, pass appId in init(props)
-    appId = '3MVG9fMtCkV6eLheIEZplMqWfnGlf3Y.BcWdOf1qytXo9zxgbsrUbS.ExHTgUPJeb3jZeT8NYhc.hMyznKU92',
+    appId = '3MVG9uudbyLbNPZOk4jVy4UG1B0juskTwCY9ayeSiRfxAJTTQmGcRqKXmlYr5ZiRk7n44VSJVG7eoIE1wARuJ',
 
 // The force.com API version to use.
 // To override default, pass apiVersion in init(props)
-    apiVersion = 'v35.0',
+    apiVersion = 'v37.0',
 
 // Keep track of OAuth data (access_token, refresh_token, and instance_url)
     oauth,
